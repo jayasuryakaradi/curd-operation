@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Read = () => {
   const [data, setData] = useState([]);
   const [items, setItems] = useState([]);
-  const [dataChange,setDataChange]=useState(false)
+  const [dataChange, setDataChange] = useState(false);
   const getData = async () => {
     await axios
       .get("https://6662e9a062966e20ef0a8f48.mockapi.io/crud-youtube")
@@ -29,15 +29,17 @@ const Read = () => {
   useEffect(() => {
     getData();
   }, [dataChange]);
-  const loadData=()=>{
-    axios.post(`https://6662e9a062966e20ef0a8f48.mockapi.io/crud-youtube`,
-      {
-        "name": "JK",
-        "email": "jk@gmail.com"
-      }
-    )
-    setDataChange((prev)=>!prev)
-  }
+  const loadData = () => {
+    let name="Dummy"
+    let email="dummy"
+    name=name+Math.floor(Math.random()*10)
+    email=email+Math.floor(Math.random()*10)+"@gmail.com"
+    axios.post(`https://6662e9a062966e20ef0a8f48.mockapi.io/crud-youtube`, {
+      name: name,
+      email: email,
+    });
+    setDataChange((prev) => !prev);
+  };
   return (
     <div className="table-container">
       <div className="title-container">
@@ -47,7 +49,7 @@ const Read = () => {
             <Button buttonName={"Create"} />
           </Link>
           <div onClick={loadData}>
-            <Button buttonName={"Load Dummy Data"}/>
+            <Button buttonName={"Load Dummy Data"} />
           </div>
         </div>
       </div>
