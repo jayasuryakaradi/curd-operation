@@ -1,0 +1,30 @@
+.table-container {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  
+}
+.title-container{
+    
+}
+.button-container Button{
+    margin:5px;
+}
+
+table {
+  border: 3px solid green;
+  width: 70%;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+}
+@media (max-width:600px) {
+    .table-container h1{
+        font-size: 20px;
+    }
+    .table-container table{
+        font-size: 12px;
+        width: 90%;
+    }
+    
+}
